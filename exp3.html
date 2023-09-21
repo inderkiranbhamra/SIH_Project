@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LivePathX - Vehicle Tracking System</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/aos.css">
+    <link rel="stylesheet" href="./assets/css/line-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container flex-lg-column">
+            <a class="navbar-brand mx-lg-auto mb-lg-4" href="#">
+                <span class="h3 fw-bold d-block d-lg-none">LivePathX</span>
+                <img src="./assets/images/profile.png" class="d-none d-lg-block rounded-circle" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto flex-lg-column text-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#bookings">Bookings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#monitoring">Monitoring Center</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#add-vehicles">Add Vehicles</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- //NAVBAR -->
+
+    <!-- CONTENT WRAPPER -->
+    <div id="content-wrapper">
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="full-height px-lg-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="display-4 fw-bold" data-aos="fade-up">Live Tracking Dashboard</h1>
+                        <p class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">Welcome to the LivePathX Dashboard. Monitor the real-time location and status of your vehicles and assets.</p>
+                    </div>
+                </div>
+                <!-- Include your dashboard content here -->
+            </div>
+        </section>
+        <!-- //DASHBOARD -->
+
+        <!-- BOOKINGS -->
+<section id="bookings" class="full-height px-lg-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold" data-aos="fade-up">Bookings</h1>
+                <p class="lead mt-2 mb-4" data-aos="fade-up" data-aos-delay="300">Manage and track bookings for your vehicles and services.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="booking-form">
+                    <h3 class="mb-4" data-aos="fade-up" data-aos-delay="300">Book a Vehicle</h3>
+                    <form action="payment.html" method="post">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="vehicle-type" class="form-label">Vehicle Type</label>
+                            <select class="form-select" id="vehicle-type" name="vehicle-type" required>
+                                <option value="" disabled selected>Select a vehicle type</option>
+                                <option value="sedan">Sedan</option>
+                                <option value="suv">SUV</option>
+                                <option value="truck">Truck</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="pickup-date" class="form-label">Pickup Date</label>
+                            <input type="date" class="form-control" id="pickup-date" name="pickup-date" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="comments" class="form-label">Comments</label>
+                            <textarea class="form-control" id="comments" name="comments" rows="4"></textarea>
+                        </div>
+                        <a href="payment.html"><button type="submit" class="btn btn-primary">Proceed to Payment</button></a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //BOOKINGS -->
+
+        <!-- MONITORING CENTER -->
+        
+        <section id="monitoring" class="full-height px-lg-5">
+            <div class="container">
+                <div class="row">
+                    <!-- Driver Details Column -->
+                    <div class="col-lg-6">
+                        <div class="driver-details">
+                            <h1 class="display-4 fw-bold" data-aos="fade-up">Driver Details</h1>
+                            <!-- Include your driver details content here -->
+                        </div>
+                    </div>
+
+                    <!-- Map Column -->
+                    <div class="col-lg-6">
+                        <div class="map-container">
+                            <div id="google-map" style="height: 400px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //MONITORING CENTER -->
+
+
+
+        <!-- ADD VEHICLES -->
+<section id="add-vehicles" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 text-center">
+                
+                <div class="add-vehicle-form">
+                    <h3 class="mb-4">Vehicle Information</h3>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="registration-number">Registration Number</label>
+                            <input type="text" class="form-control" id="registration-number" name="registration-number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicle-name">Vehicle Name</label>
+                            <input type="text" class="form-control" id="vehicle-name" name="vehicle-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="model">Model</label>
+                            <input type="text" class="form-control" id="model" name="model" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="manufactured-by">Manufactured By</label>
+                            <input type="text" class="form-control" id="manufactured-by" name="manufactured-by" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicle-colour">Vehicle Colour</label>
+                            <input type="text" class="form-control" id="vehicle-colour" name="vehicle-colour" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicle-fuel-type">Vehicle Fuel Type</label>
+                            <input type="text" class="form-control" id="vehicle-fuel-type" name="vehicle-fuel-type" required>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <!-- Driver and GPS API Details Form -->
+                <div class="add-driver-form">
+                    <h3 class="mb-4">Driver and GPS API Details</h3>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="driver-name">Driver Name</label>
+                            <input type="text" class="form-control" id="driver-name" name="driver-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="driver-age">Driver Age</label>
+                            <input type="number" class="form-control" id="driver-age" name="driver-age" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gps-api-details">GPS API Details</label>
+                            <textarea class="form-control" id="gps-api-details" name="gps-api-details" rows="4" required></textarea>
+                        </div><br>
+                        <button type="submit" class="btn btn-primary">Add Vehicle</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //ADD VEHICLES -->
+
+        <!-- FOOTER -->
+        <footer class="py-5 px-lg-5">
+            <div class="container">
+                <div class="row gy-4 justify-content-between">
+                    <div class="col-auto">
+                        <p class="mb-0">Designed by <a href="https://www.instagram.com/_icaptain/" class="fw-bold">TECH TITANS</a></p>
+                    </div>
+                    <div class="col-auto">
+                        <div class="social-icons">
+                            <a href=""><i class="lab la-twitter"></i></a>
+                            <a href=""><i class="lab la-instagram"></i></a>
+                            <a href=""><i class="lab la-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- //FOOTER -->
+
+    </div>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsuxWCNxg8PawoY2SU8SsqXEyuD91b3jc&callback=initMap" async defer></script>
+     <script>
+         function initMap() {
+             // Specify the map's center coordinates
+             var mapCenter = { lat: 30.770934, lng: 76.578716 }; // Replace with your desired map center coordinates
+ 
+             // Create a new map instance and specify the DOM element for display.
+             var map = new google.maps.Map(document.getElementById('google-map'), {
+                 center: mapCenter,
+                 zoom: 15 // Adjust the zoom level as needed
+             });
+ 
+             // You can add markers or other map features here.
+             var redMarkerIcon = {
+            url: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png', // URL to the red pin icon
+            scaledSize: new google.maps.Size(40, 40), // Adjust the size of the icon as needed
+        };
+             // Create a marker and set its position and icon on the map
+        var marker = new google.maps.Marker({
+            position: markerCoordinates,
+            map: map,
+            title: 'Marker Title', // Optional title for the marker
+            icon: redMarkerIcon // Use the custom red marker icon
+        });
+         }
+     </script>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/aos.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
